@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { contact, about } from "@/app/content";
 
 const Hero = () => {
   const images = [
@@ -74,8 +75,8 @@ const Hero = () => {
           Maîtrise, élégance et tradition — votre nouvelle référence coiffure.
         </motion.p>
         <motion.a
-          href="#join"
-          className="px-6 py-3 bg-classic-gold text-white border-slate-gray text-lg rounded-lg transition-all duration-300 inline-block"
+          href={contact.whatsapp.text}
+          className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >

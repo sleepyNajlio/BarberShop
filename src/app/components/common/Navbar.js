@@ -32,12 +32,12 @@ export default function Navbar() {
     <nav
       className={`${
         isScrolled
-          ? "fixed top-0 left-0 w-full z-50 bg-black/80"
+          ? "fixed top-0 left-0 w-full z-50 bg-black/90"
           : "absolute top-0 left-0 w-full z-50"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <div className="text-xl font-bold text-yellow-400 tracking-widest px-6">
+        <div className="text-xl font-bold text-yellow-400 tracking-widest px-6 items-center">
           <Link href="/">
             <Image
               src="/logo.png"

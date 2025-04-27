@@ -1,14 +1,20 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaGlobe,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+import { contact } from "../content";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
@@ -29,7 +35,7 @@ const Contact = () => {
     animate: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
       },
     },
   };
@@ -40,31 +46,32 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-black text-white py-16 px-6 lg:px-48">
+    <section
+      id="contact"
+      className="bg-charcoal-black text-ivory-cream py-16 px-6 lg:px-48"
+    >
       <div className="container mx-auto space-y-16">
-        
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="initial"
-          whileInView="animate"  
-          viewport={{ once: false, amount: 0.3 }} 
+          whileInView="animate"
+          viewport={{ once: false, amount: 0.3 }}
         >
           {[
-            { icon: <FaPhoneAlt />, text: "+213 123 456 789" },
-            { icon: <FaEnvelope />, text: "contact@gym-next.com" },
-            { icon: <FaMapMarkerAlt />, text: "123 Rue de la Salle, Alger, Algérie" },
-            { icon: <FaGlobe />, text: "gym-nextjs-amina.vercel.app" },
+            { icon: <FaPhoneAlt />, text: contact.phone },
+            { icon: <FaEnvelope />, text: contact.email },
+            { icon: <FaMapMarkerAlt />, text: contact.address },
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-gray-800 p-6 rounded-lg shadow-lg transition duration-300 hover:bg-yellow-500"
+              className="group bg-black p-6 rounded-2xl shadow-lg transition duration-300 hover:bg-slate-gray "
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.8 }}  
+              transition={{ duration: 0.8 }}
             >
               <div className="flex items-center space-x-4">
-                <div className="text-4xl text-yellow-500 group-hover:text-white transition duration-300">
+                <div className="text-4xl text-ivory-cream group-hover:text-light-gold-accent transition duration-300">
                   {card.icon}
                 </div>
                 <p className="text-lg">{card.text}</p>
@@ -73,19 +80,22 @@ const Contact = () => {
           ))}
         </motion.div>
 
- 
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between lg:px-12 space-y-8 lg:space-y-0 lg:space-x-12"
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}  
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1 }}
         >
           <div className="lg:w-1/2 space-y-6">
-            <h2 className="text-4xl font-extrabold text-yellow-500">Contactez-nous</h2>
+            <h2 className="text-4xl font-extrabold text-yellow-500">
+              Contactez-nous
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-lg font-medium">Nom</label>
+                <label htmlFor="name" className="block text-lg font-medium">
+                  Nom
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -97,7 +107,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-lg font-medium">Email</label>
+                <label htmlFor="email" className="block text-lg font-medium">
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -109,7 +121,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-lg font-medium">Message</label>
+                <label htmlFor="message" className="block text-lg font-medium">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"

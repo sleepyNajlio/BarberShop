@@ -2,12 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { LuCalendarClock } from "react-icons/lu";
+import { LuCalendarClock, LuPhone } from "react-icons/lu";
 import { PiClockClockwiseLight } from "react-icons/pi";
+import { contact } from "@/app/content";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
-    <section id="about" className="bg-black text-white py-16 px-6 lg:px-24">
+    <section
+      id="about"
+      className="bg-charcoal-black text-ivory-cream py-16 px-6 lg:px-24"
+    >
       <div className="container mx-auto space-y-16">
         <motion.div
           className="flex flex-col items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12"
@@ -33,7 +38,7 @@ const AboutUs = () => {
                 className="w-full h-full object-cover transform transition duration-500 hover:scale-105"
               />
             </div>
-            <div className="lg:w-1/2 space-y-4">
+            <div className="lg:w-1/2 space-y-4 items-center">
               {/* <motion.p
                 className="text-lg leading-relaxed"
                 initial={{ opacity: 0 }}
@@ -48,13 +53,8 @@ const AboutUs = () => {
                   c’est une expérience.
                 </span>
               </motion.p> */}
-              <hr className="w-full border-t border-ivory-cream my-4" />
-              <motion.h3
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="text-4xl font-bold mt-8 mb-4 text-center text-light-gold-accent"
-              >
+              {/* <hr className="w-full border-t border-ivory-cream my-4" /> */}
+              <motion.h3 className="text-4xl font-bold mt-8 mb-4 text-center text-light-gold-accent font-playfair">
                 <LuCalendarClock className="inline-block mr-2 mb-2 text-ivory-cream" />
                 Horaires d'ouverture
               </motion.h3>
@@ -67,6 +67,17 @@ const AboutUs = () => {
                 {/* <PiClockClockwiseLight className="inline-block mb-1 ml-3 text-ivory-cream" /> */}
                 10:00 AM - 02:00 AM
               </motion.p>
+              <Link href={contact.whatsapp}>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={contact.whatsapp}
+                  className="text-ivory-cream border border-light-gold-accent rounded-2xl px-4 py-2 w-fit mx-auto my-4 hover:text-light-gold-accent transition-colors duration-300"
+                >
+                  <LuPhone className="inline-block mb-1 text-ivory-cream" />
+                  <span className="ml-2">Contactez-nous</span>
+                </motion.div>
+              </Link>
             </div>
           </div>
         </motion.div>
