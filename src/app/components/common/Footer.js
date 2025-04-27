@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import { contact } from "@/app/content";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,7 +52,7 @@ const Footer = () => {
                   <FaTwitter className="text-3xl" />
                 </a>
                 <a
-                  href="#"
+                  href={contact.instagram}
                   className="text-ivory-cream hover:text-light-gold-accent transition duration-300"
                 >
                   <FaInstagram className="text-3xl" />

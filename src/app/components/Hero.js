@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { contact, about } from "@/app/content";
+import { BsScissors } from "react-icons/bs";
+import { HiOutlineScissors } from "react-icons/hi2";
 
 const Hero = () => {
   const images = [
@@ -75,8 +77,9 @@ const Hero = () => {
           Maîtrise, élégance et tradition — votre nouvelle référence coiffure.
         </motion.p>
         <motion.a
-          href={contact.whatsapp.text}
-          className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block"
+          href={contact.whatsapp}
+          target="_blank"
+          className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block cursor-pointer font-bold italic"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >

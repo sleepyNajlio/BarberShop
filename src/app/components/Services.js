@@ -8,7 +8,7 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="py-16 bg-charcoal-black text-ivory-cream font-playfair"
+      className="py-8 bg-charcoal-black text-ivory-cream font-playfair"
     >
       <div className="max-w-6xl mx-auto px-4">
         <h2

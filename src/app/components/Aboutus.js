@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="bg-charcoal-black text-ivory-cream py-16 px-6 lg:px-24"
+      className="bg-charcoal-black text-ivory-cream py-8 px-6 lg:px-24"
     >
       <div className="container mx-auto space-y-16">
         <motion.div

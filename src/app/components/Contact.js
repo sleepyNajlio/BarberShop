@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { contact } from "../content";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -62,23 +63,37 @@ const Contact = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           {[
-            { icon: <FaPhoneAlt />, text: contact.phone },
-            { icon: <FaEnvelope />, text: contact.email },
-            { icon: <FaMapMarkerAlt />, text: contact.address },
+            {
+              icon: <FaPhoneAlt />,
+              text: contact.phone,
+              link: `tel:${contact.phone}`,
+            },
+            {
+              icon: <FaEnvelope />,
+              text: contact.email,
+              link: `mailto:${contact.email}`,
+            },
+            {
+              icon: <FaMapMarkerAlt />,
+              text: contact.address,
+              link: `https://maps.google.com/?q=${contact.address}`,
+            },
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-black hover:bg-black/50 p-6 rounded-2xl shadow-lg transition duration-300 w-full"
+              className="group bg-black hover:bg-black/50 p-6 rounded-2xl shadow-lg transition duration-300 w-full items-center justify-center"
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, type: "spring" }}
             >
-              <div className="flex items-center space-x-4">
-                <div className="text-4xl text-ivory-cream group-hover:text-light-gold-accent transition duration-300">
-                  {card.icon}
+              <Link href={card.link} target="_blank">
+                <div className="flex items-center space-x-4 cursor-pointer">
+                  <div className="text-4xl text-ivory-cream group-hover:text-light-gold-accent transition duration-300">
+                    {card.icon}
+                  </div>
+                  <p className="text-lg">{card.text}</p>
                 </div>
-                <p className="text-lg">{card.text}</p>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -103,7 +118,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-light-gold-accent"
                 />
               </div>
               <div>
@@ -117,7 +132,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-light-gold-accent"
                 />
               </div>
               <div>
@@ -130,14 +145,14 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  rows="4"
+                  className="w-full px-4 py-2 mt-2 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-light-gold-accent"
+                  rows="3"
                 ></textarea>
               </div>
               <div className="text-center">
                 <motion.button
                   type="submit"
-                  className="bg-yellow-500 text-black py-3 px-6 text-lg font-semibold transform transition duration-300 hover:scale-105"
+                  className="bg-light-gold-accent rounded-2xl text-black py-3 px-6 text-lg font-semibold transform transition duration-300 hover:scale-105"
                   whileHover={{ scale: 1.1 }}
                 >
                   Envoyer
