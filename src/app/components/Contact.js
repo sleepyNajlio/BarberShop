@@ -48,11 +48,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-charcoal-black text-ivory-cream py-16 px-6 lg:px-48"
+      className="bg-charcoal-black text-ivory-cream py-8 px-6 lg:px-48"
     >
+      <h2 className="text-4xl font-extrabold text-light-gold-accent text-center mb-8 font-playfair">
+        Contactez-nous
+      </h2>
       <div className="container mx-auto space-y-16">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="flex flex-col lg:flex-row gap-8"
           variants={containerVariants}
           initial="initial"
           whileInView="animate"
@@ -65,10 +68,10 @@ const Contact = () => {
           ].map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-black p-6 rounded-2xl shadow-lg transition duration-300 hover:bg-slate-gray "
+              className="group bg-black hover:bg-black/50 p-6 rounded-2xl shadow-lg transition duration-300 w-full"
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="flex items-center space-x-4">
                 <div className="text-4xl text-ivory-cream group-hover:text-light-gold-accent transition duration-300">
@@ -87,10 +90,7 @@ const Contact = () => {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1 }}
         >
-          <div className="lg:w-1/2 space-y-6">
-            <h2 className="text-4xl font-extrabold text-yellow-500">
-              Contactez-nous
-            </h2>
+          <div className="lg:w-1/2 space-y-4 w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-lg font-medium">
