@@ -55,12 +55,12 @@ const Contact = () => {
         Contactez-nous
       </h2>
       <div className="container mx-auto space-y-16">
-        <motion.div
+        {/* <motion.div
           className="flex flex-col lg:flex-row gap-8"
           variants={containerVariants}
-          initial="initial"
+          // initial="initial"
           whileInView="animate"
-          viewport={{ once: false, amount: 0.3 }}
+          // viewport={{ once: false, amount: 0.3 }}
         >
           {[
             {
@@ -76,7 +76,7 @@ const Contact = () => {
             {
               icon: <FaMapMarkerAlt />,
               text: contact.address,
-              link: `https://maps.google.com/?q=${contact.address}`,
+              link: contact.addressLink,
             },
           ].map((card, index) => (
             <motion.div
@@ -96,7 +96,7 @@ const Contact = () => {
               </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between lg:px-12 space-y-8 lg:space-y-0 lg:space-x-12"
@@ -161,9 +161,9 @@ const Contact = () => {
             </form>
           </div>
 
-          <div className="lg:w-1/2">
+          <div className=" w-full lg:w-1/2">
             <motion.iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13131.434021582504!2d3.058760643216767!3d36.75277884508961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f64f947750d059%3A0x2c8d1cd8e858c2ad!2sAlger%2C%20Algeria!5e0!3m2!1sen!2sus!4v1601186363100!5m2!1sen!2sus"
+              src={contact.addressLink}
               width="100%"
               height="400"
               frameBorder="0"
@@ -174,6 +174,7 @@ const Contact = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
+              className="rounded-2xl w-full"
             ></motion.iframe>
           </div>
         </motion.div>

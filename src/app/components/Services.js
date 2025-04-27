@@ -10,7 +10,12 @@ export const Services = () => {
       id="services"
       className="py-8 bg-charcoal-black text-ivory-cream font-playfair"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <motion.div
+        className="max-w-6xl mx-auto px-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <h2
           className="text-4xl font-bold text-center mb-8"
           style={{ textShadow: "var(--neon-glow)" }}
@@ -38,7 +43,7 @@ export const Services = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

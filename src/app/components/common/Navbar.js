@@ -81,18 +81,11 @@ export default function Navbar() {
             A propos
           </Link>
           <Link
-            href="#schedule"
+            href="#services"
             className="block py-2 px-4 hover:text-light-gold-accent"
             onClick={closeMenu}
           >
-            Programme
-          </Link>
-          <Link
-            href="#pricing"
-            className="block py-2 px-4 hover:text-light-gold-accent"
-            onClick={closeMenu}
-          >
-            Tarifs
+            Services
           </Link>
           <Link
             href="#contact"

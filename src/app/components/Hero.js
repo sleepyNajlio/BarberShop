@@ -5,8 +5,11 @@ import Image from "next/image";
 import { contact, about } from "@/app/content";
 import { BsScissors } from "react-icons/bs";
 import { HiOutlineScissors } from "react-icons/hi2";
+import ReservationPopup from "./reservationpopup";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const images = [
     { src: "/images/barber-hero.jpg", alt: "BarberShop Hero Image 1" },
     { src: "/images/barber-hero1.jpg", alt: "BarberShop Hero Image 2" },
@@ -76,15 +79,18 @@ const Hero = () => {
         >
           Maîtrise, élégance et tradition — votre nouvelle référence coiffure.
         </motion.p>
-        <motion.a
-          href={contact.whatsapp}
-          target="_blank"
-          className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block cursor-pointer font-bold italic"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Réservez Votre Style
-        </motion.a>
+        <ReservationPopup
+          trigger={
+            <motion.a
+              onClick={() => setIsOpen(true)}
+              className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block cursor-pointer font-bold italic"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Réservez Votre Style
+            </motion.a>
+          }
+        />
       </motion.div>
     </section>
   );

@@ -4,7 +4,8 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 export const metadata = {
   title: "Barber De Luxe",
-  description: "L'art de La Coupe & du Grooming Haut de Gamme",
+  description:
+    "Barber de Luxe Agadir, votre barbier de luxe, propose un service haut de gamme : coupe de cheveux et taille de barbe. Réservez dès maintenant !",
 };
 
 export default function RootLayout({ children }) {
