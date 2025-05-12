@@ -64,7 +64,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         <motion.h1
-          className="text-5xl md:text-6xl max-w-3xl font-playfair font-bold text-center"
+          className="text-3xl md:text-5xl max-w-3xl font-playfair font-bold text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -72,7 +72,7 @@ const Hero = () => {
           Découvrez l'Art du Barbering de Luxe à Agadir.
         </motion.h1>
         <motion.p
-          className="text-lg md:text-2xl max-w-2xl mx-auto mb-8"
+          className="text-l md:text-2xl max-w-2xl mx-auto mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
