@@ -67,7 +67,7 @@ const Hero = () => {
           className="text-3xl md:text-5xl max-w-3xl font-playfair font-bold text-center"
           // initial={{ opacity: 0 }}
           // whileInView={{ opacity: 1 }}
-          // transition={{ duration: 0.6, delay: 0.2 }}
+          // transition={{ duration: 0.1, delay: 0.2 }}
         >
           Découvrez l'Art du Barbering de Luxe à Agadir.
         </h1>
