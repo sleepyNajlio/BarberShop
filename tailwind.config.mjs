@@ -59,10 +59,6 @@ export default {
   			}
   		},
   		fontFamily: {
-  			raleway: [
-  				'Raleway',
-  				'serif'
-  			],
   			playfair: [
   				'Playfair Display',
   				'serif'
