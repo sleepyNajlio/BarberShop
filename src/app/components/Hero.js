@@ -48,12 +48,14 @@ const Hero = () => {
         </p>
         <ReservationPopup
           trigger={
-            <a
+            <button
               onClick={() => setIsOpen(true)}
               className="px-6 py-3 bg-classic-gold text-white text-lg rounded-2xl transition-all duration-300 inline-block cursor-pointer font-bold italic hover:scale-105 active:scale-98"
+              role="button"
+              aria-label="Réserver un rendez-vous"
             >
               Réservez Votre Style
-            </a>
+            </button>
           }
         />
       </div>

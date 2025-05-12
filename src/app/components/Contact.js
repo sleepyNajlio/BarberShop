@@ -163,6 +163,7 @@ const Contact = () => {
 
           <div className=" w-full lg:w-1/2">
             <motion.iframe
+              title="Carte Google Maps montrant l'emplacement de Barber de Luxe à Agadir"
               src={contact.addressLink}
               width="100%"
               height="400"

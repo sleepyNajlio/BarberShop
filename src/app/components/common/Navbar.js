@@ -53,6 +53,9 @@ export default function Navbar() {
         <button
           className="md:hidden block focus:outline-none"
           onClick={toggleMenu}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          aria-label="Menu principal"
         >
           <div className="space-y-1">
             <span className="block h-1 w-6 bg-white"></span>
@@ -62,6 +65,9 @@ export default function Navbar() {
         </button>
 
         <div
+          id="mobile-menu"
+          role="navigation"
+          aria-label="Menu principal"
           className={`${
             isOpen ? "block" : "hidden"
           } md:flex md:items-center md:space-x-6 bg-black/80 md:bg-transparent w-full md:w-auto absolute md:relative top-16 left-0 md:top-0 md:left-0 md:z-auto text-white`}
