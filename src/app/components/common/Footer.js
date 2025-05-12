@@ -40,18 +40,21 @@ const Footer = () => {
               </h3>
               <div className="flex space-x-6">
                 <a
+                  aria-label="Suivez-nous sur Facebook"
                   href="#"
                   className="text-ivory-cream hover:text-light-gold-accent transition duration-300"
                 >
                   <FaFacebook className="text-3xl" />
                 </a>
-                <a
+                {/* <a
+                  aria-label="Suivez-nous sur Twitter"
                   href="#"
                   className="text-ivory-cream hover:text-light-gold-accent transition duration-300"
                 >
                   <FaTwitter className="text-3xl" />
-                </a>
+                </a> */}
                 <a
+                  aria-label="Suivez-nous sur Instagram"
                   href={contact.instagram}
                   className="text-ivory-cream hover:text-light-gold-accent transition duration-300"
                 >
@@ -71,7 +74,7 @@ const Footer = () => {
 
       <div className="bg-black py-4">
         <div className="container mx-auto text-center">
-          <p className="text-white text-sm">&copy; {currentYear}</p>
+          <p className="text-white text-sm">&copy; {currentYear} - Tous droits réservés</p>
         </div>
       </div>
     </div>
